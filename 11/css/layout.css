@@ -1,0 +1,75 @@
+*{
+	box-sizing: border-box;
+}
+
+body{
+	padding: 0;
+	margin: 0;
+	background-image: url(http://images.china.cn/attachement/jpg/site1000/20130926/001fd04cef8213addced39.jpg);
+	background-color: lightgrey;
+	background-repeat: no-repeat,no-repeat,no-repeat;
+	background-attachment: fixed,fixed,fixed;
+	background-position: left bottom,right bottom,center;
+	background-size: 100%,100%,100%;
+
+}
+.clearfix::after{
+	content: "";
+	display: table;
+	clear: both;
+}
+#wrapper{
+	max-width: 1200px;
+	min-width: 800px;
+	margin: auto;
+}
+p{
+	text-indent: 2em;
+	
+}
+header h1{
+	text-align: center;
+}
+header ul{
+	list-style-type: none;
+	margin: 30px 0 0 14px;
+	padding: 0;
+	float:right;
+}
+header li{
+	float: right;
+}
+header,footer{
+	border: 1px solid #9df;
+	margin: 1% 0;
+	height: 200px;
+}
+aside,main{
+	border: 1px solid #9df;
+}
+section,aside,main{
+	min-height: 500px;
+}
+aside{
+	width: 20%;
+	margin-right: 0.5%;
+	float: left;
+}
+main{
+	width: 79%;
+	float: right;
+}
+a.flip {
+  color: #011f28;
+  padding: 1px 3px;
+  -webkit-transform: rotateX(0deg);
+          transform: rotateX(0deg);
+}
+a.flip:hover {
+  color: #fff;
+  -webkit-transform: rotateX(360deg);
+          transform: rotateX(360deg);
+  background: #011f28;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
