@@ -1,0 +1,54 @@
+
+ul{
+	list-style-type: none;
+	padding: 0;
+}
+a{
+	text-decoration: none;
+	color: #fff;
+}
+
+ img{
+	width: 60px;
+	height: auto;
+}
+body{
+	background: url(../img/photographer-cameras.jpg)  center top fixed;
+	min-height: 1200px;
+	color: #fff;
+}	
+.mainNav{
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.mainNav ul li{
+	float: left;
+	margin: 20px 30px;
+}
+.mainNav ul li a{
+	text-decoration: none;
+	color: #fff;
+	padding: 20px;
+	border: 1px solid transparent;
+	transition: color .5s,border .5s;
+}
+.mainNav ul li a:hover{
+	color: #000;
+	border: 1px solid #fff;
+}
+header{
+	max-width: 1200px;
+	margin:30px auto;
+	position: relative;
+}
+
+header nav{
+	position: absolute;
+	right: 0px;
+	top: 0px;
+}
+header nav ul li{
+	float: left;
+	margin: 20px 30px;
+}
