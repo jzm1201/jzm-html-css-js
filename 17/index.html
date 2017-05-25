@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	
+		<link rel="stylesheet" href="https://cdn.bootcss.com/normalize/7.0.0/normalize.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/new_file.css"/>
+		<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	</head>
+	<body>
+		<header>
+			 <a href="index.html class="logo">
+				<img src="img/bitrise.svg" alt="" />
+			</a>
+			<div class="mainNav">
+				<a id="0"></a>
+				<ul class="clearfix">
+					<li><a href="#1">photographer</a></li>
+					<li><a href="#2">photo</a></li>
+					<li><a href="#3">contact</a></li>
+				</ul>
+			</div>
+			<h1>hello,I am jzm </h1>
+			<p>Becoming an excellent photographer is my dream.</p>
+		</header>
+		<main>
+			<a id="1"></a>
+			<section class="photographer" >
+				<h2>favorite photographer</h2>
+				<ul class="clearfix">
+					<li><a href="#">cartit·Bresson</a></li>
+					<li><a href="#">Ansel Adams</a></li>
+					<li><a href="#">Afred Eisenstaedt</a></li>
+					<li><a href="#">Martin Par</a></li>
+					<li><a href="#">Annie Leibovitz</a></li>
+					<li><a href="#">Robert Capa</a></li>
+					<li><a href="#">Elliott Erwitt</a></li>
+					<li><a href="#">Robert Frank</a></li>
+					<li><a href="#">Robert Frank</a></li>
+				</ul>
+			</section>
+			<section>
+				<a id="2"></a>
+				<h2>photo</h2>
+				<div class="photo clearfix">
+					<figure>
+					<figcaption>photo</figcaption>
+					<a href=""><img src="img/pexels-photo.jpg" alt=""/></a>
+				</figure>
+				<figure>
+					<figcaption>photo</figcaption>
+					<a href=""><img src="img/pexels-photo.jpg" alt=""/></a>
+				</figure>
+				<figure>
+					<figcaption>photo</figcaption>
+					<a href=""><img src="img/pexels-photo.jpg" alt=""/></a>
+				</figure>
+				<figure>
+					<figcaption>photo</figcaption>
+					<a href=""><img src="img/pexels-photo.jpg" alt=""/></a>
+				</figure>
+				<figure>
+					<figcaption>photo</figcaption>
+					<a href=""><img src="img/pexels-photo.jpg" alt=""/></a>
+				</figure>
+				<figure>
+					<figcaption>photo</figcaption>
+					<a href=""><img src="img/pexels-photo.jpg" alt=""/></a>
+				</figure>
+				</div>
+			</section>
+			<section>
+				<a id="3"></a>
+				<h2>contact</h2>
+				<dl>
+					<dt>mail</dt>
+					<dd>1250279926@qq.com</dd>
+					<dt>QQ</dt>
+					<dd>1250279926</dd>
+				</dl>
+				<div class="contact">
+					<input tapy="text" name="name" id="name" placeholder="name"/>
+					<input tapy="text" name="name" id="name" placeholder="mail"/>
+					<select name="fav" id="name">
+						<option value="0">photograph</option>
+						<option value="1">camera</option>
+						<option value="2">scenery</option>
+						<option value="3">portrait</option>
+						<option value="4">wedding</option>
+					</select>
+					<textarea name="massage" id="massage" placeholder="comment"></textarea>
+					<input type="submit" name="submit" id="submit" value="submit"/>
+				</div>
+				<a href="#0" title="返回顶部" id="toTop" class="clearfix top"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+			</section>
+			</main>
+			<footer>
+					<p>&copy;姜智孟版权所有，如有雷同，不胜感激</p>	
+			</footer>
+		<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$('header a').on('click', function(e) {
+					e.preventDefault();
+					$('html, body').animate({ scrollTop: $($(this).attr('href')).offset().top}, 500);
+				});
+				$('#goTop').on('click', function(e) {
+					e.preventDefault();
+					$('html, body').animate({ scrollTop: 0}, 500);
+				});
+			});
+		</script>
+
+	</body>
+</html>
