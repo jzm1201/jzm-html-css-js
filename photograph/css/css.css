@@ -89,6 +89,7 @@ header{
 	position: fixed;
 	z-index: 99999;
 	width: 100%;
+	margin-right: 0;
  	box-sizing: border-box;
 	font-family: simhei;
 	background-color: rgba(0,0,0,.3);
