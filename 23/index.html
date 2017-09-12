@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			#a{
+				font-size: 14px;
+				text-indent: 2em;
+		        line-height: 1.5em;
+			}
+		</style>
+	</head>
+	<body>
+		<a id="big" href="javascript:">大</a>&nbsp;
+		<a id="small" href="javascript:">小</a>
+		<div id="a">
+			<p>摄影一词是源于希腊语φῶς phos（光线）和 γραφι graphis（绘画、绘图）</p>
+			<p>摄影也会被称为照相，也就是通过物体所反射的光线使感光介质曝光的过程</p>
+			<p>摄影家的能力是把日常生活中稍纵即逝的平凡事物转化为不朽的视觉图像</p>
+		</div>
+		<script type="text/javascript">
+			var a = document.getElementById("a");
+			var big = document.getElementById("big");
+			var small = document.getElementById("small");
+			var i=14;
+			
+			big.onclick=function(){
+				i +=2;
+				a.style.fontSize=i+'px';
+			}
+			small.onclick=function(){
+				i -=2;
+				a.style.fontSize=i+'px';
+			}
+		</script>
+	</body>
+</html>
