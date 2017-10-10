@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			#clock{
+				width: 400px;
+				height: 400px;
+				position: relative;
+				background: url(img/clock.jpg) no-repeat;
+				background-size: 100%;
+			}
+			#hour{
+				width:1.2%;
+				height: 16%;
+				background-color: #000;
+				position: absolute;
+				left: 49.5%;
+				top: 34%;
+				-webkit-transform-origin: 50% 100%;
+			}
+			#min{
+				width: 1.2%;
+				height: 22%;
+				background-color: #000;
+				position: absolute;
+				left: 49.5%;
+				top: 28%;
+				-webkit-transform-origin: 50% 100%;
+			}
+			#sec{
+				width: 0.6%;
+				height: 26%;
+				background-color: #f00;
+				position: absolute;
+				left: 49.7%;
+				top:24%;
+				-webkit-transform-origin: 50% 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="clock">
+			<div id="hour"></div>
+			<div id="min"></div>
+			<div id="sec"></div>
+		</div>
+		<script type="text/javascript">
+			var oClock=document.getElementById("clock");
+			var oHour=document.getElementById("hour");
+			var oMin=document.getElementById("min");
+			var oSec=document.getElementById("sec");
+			function runTime(){
+				var now=new Date();
+				var sec=now.getSeconds()*6;
+				var min=(now.getMinutes()+now.getSeconds()/60)*6;
+				var hour=(now.getHours()+now.getMinutes()/60+now.getSeconds()/3600)*30;
+				oHour.style.webkitTransform="rotate("+hour+"deg)"
+				oMin.style.webkitTransform="rotate("+min+"deg)";
+				oSec.style.webkitTransform="rotate("+sec+"deg)";
+			}
+			setInterval("runTime()",100);
+		</script>
+	</body>
+</html>
