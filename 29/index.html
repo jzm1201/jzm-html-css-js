@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>打字练习</title>
+		<style type="text/css">
+			body{
+				margin: 0;
+				padding: 0;
+				background: url(img/1.jpeg) no-repeat fixed;
+				background-size: cover;
+			}
+			.test{
+				width: 800px;
+				min-height:500px;
+				margin: 220px 0 0 385px;
+			}
+			.title{
+				text-align: center;
+				font-family: "楷体";
+			}
+			.text{
+				text-indent: 2em;
+				font-family: "楷体";
+			}
+			h1{
+				color: #000;
+			}
+			h3{
+				line-height: 2em;
+				color: #CD6600;
+			}
+		</style>
+	</head>
+	<body>
+	    <div class="test">
+	    	<h1 class="title">人生一场是单程的旅行 </h1>
+		  	<h3 class="text">在人生的环球旅行中，我们一定会看见许许多多的风景，遇见各色各样的人物，遭遇这样那样的事儿。但我们总喜欢拍照留念，夹在一个叫回忆的相册里。闲暇时翻一翻，也看一看。在旅行中，我们会认识和我们相濡以沫的人，虽然，我们有一天会分道扬镳，但依然有人和我们一起去旅行。在新的线路上结交新的朋友，所以不用害怕。 
+                      时间，前程，生活，现实，和，死亡。都会分开我们这一群不分彼此的至亲好友。但我相信，我们依旧如初。 </h3>
+	        
+	    </div>
+		
+		<script type="text/javascript">
+			var oH1=document.querySelector(".title");
+			var oH3=document.querySelector(".text");
+			
+			function typeText(ele,speed,loop){
+				var oTitle=ele;
+				var str=oTitle.innerText;
+				var i=0;
+				var loop=loop||false;
+				oTitle.innerText="";
+				var a=setInterval(function () {
+					if(i<str.length){
+						oTitle.innerText+=str[i];
+					}else{
+						if(loop){
+						i=-1;
+						oTitle.innerText="";
+						}else{
+							clearInterval(a);
+						}
+					}i++;
+				},speed);
+			}
+			typeText(oH1,100);
+			typeText(oH3,200,true);
+		</script>
+	</body>
+</html>
