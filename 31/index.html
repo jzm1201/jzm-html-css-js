@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>login</title>
+		<style type="text/css">
+	*{
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+	}
+	body {
+	background: #50a3a2;	
+    }
+	.wrapper {	
+	   margin-top: 80px;
+	   margin-bottom: 80px;
+	}
+	
+	.form-signin {
+	  max-width: 380px;
+	  padding: 15px 35px 45px;
+	  margin: 0 auto;
+	  background-color:lightblue;
+	  border: 1px solid rgba(0,0,0,0.1);  
+	}
+	  
+	  h2,.checkbox {
+		  margin-bottom: 30px;
+		}
+	
+		.checkbox {
+		  font-weight: normal;
+	}
+	
+		.form-control {
+		  position: relative;
+		  font-size: 16px;
+		  height: auto;
+		  padding: 10px;
+
+	}
+		input[type="text"] {
+		  margin-bottom: -1px;
+		  border-bottom-left-radius: 0;
+		  border-bottom-right-radius: 0;
+		}
+		input[type="password"] {
+		  margin-bottom: 20px;
+		  border-top-left-radius: 0;
+		  border-top-right-radius: 0;
+		}
+		
+	}
+     </style>
+	</head>
+	<body>
+	<div class="wrapper">
+    <div class="form-signin">       
+      <h2>登录</h2>
+      <input type="text" class="form-control" id="username" placeholder="username"  />
+      <input type="password" class="form-control" id="password" placeholder="Password" />      
+      <div class="checkbox">
+        <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> 记住
+      </div>
+      <input type="submit" value="登录" id="login"/>	   
+    </div>
+  </div>
+  <script type="text/javascript">
+		var oUsername=document.getElementById("username");
+		var oPassword=document.getElementById("password");
+		var oLogin=document.getElementById("login");
+		document.onkeydown=function(event){
+	        var event=event||window.event;
+	        document.getElementById("username").innerHTML=event.keyCode;  
+	        document.getElementById("password").innerHTML=event.keyCode; 
+      }
+		oLogin.addEventListener("click",function () {
+			if(oUsername.value!=""&&oPassword.value!=""){
+				window.open("https://github.com/jzm1201");	
+			}
+			else
+			alert("请输入用户名及密码.");
+		});		
+	</script>
+	</body>
+</html>
