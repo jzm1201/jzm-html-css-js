@@ -1,0 +1,257 @@
+
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			.clearfix {
+				clear: both;
+			}
+			#background{
+				position:fixed;
+                 width:120%;
+                 height:120%;
+                 z-index: -10;
+                 opacity: 0.5;
+                 margin-left:-172px;
+                 margin-top: -30px;
+			}
+			#subject {
+				/*border: 1px solid slateblue;*/
+				margin-left: 600px;
+				/*margin-top:-200px;*/
+				float: left;
+				/*position: absolute;*/
+				margin-top: 0px;
+				z-index: 999;
+			}
+			
+			ul {
+				list-style-type: none;
+				text-align: left;
+				visibility: hidden;
+				margin-bottom: 20px;
+				color: white;
+			}
+			
+			ul label {
+				cursor: pointer;
+			}
+			
+			.table h1 {
+				text-align: center;
+				position: relative;
+				color: black;
+			}
+			input{
+				color: black;
+			}
+			#go,
+			#next {
+				text-align: center;
+				border: none;
+				background-color: orange;
+				border-radius: 5px;
+				width: 70px;
+				height: 35px;
+				cursor: pointer;
+				margin-left: 720px;
+				outline: none;
+			}
+			
+			#next {
+				visibility: hidden;
+				margin-left: 1000px;
+				margin-top: 150px;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			#rego{
+				visibility: hidden;
+				text-align: center;
+				border: none;
+				background-color: orange;
+				border-radius: 5px;
+				width: 70px;
+				height: 35px;
+				cursor: pointer;
+				margin-left: 728px;
+				outline: none;
+				position: absolute;
+				left: 0;
+				top: 0;
+				margin-top: 84px;
+			}
+			#go:hover {
+				background-color: orangered;
+				transition: all .5s;
+			}
+			
+			#next:hover {
+				background-color: orangered;
+				transition: all .5s;
+			}
+			#over{
+				text-align: center;
+				border: none;
+				background-color: orange;
+				border-radius: 5px;
+				width: 70px;
+				height: 35px;
+				cursor: pointer;
+				margin-left: 720px;
+				outline: none;
+				margin-top: 150px;
+				visibility: hidden;
+				margin-left: 1111px;
+				
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			#over:hover {
+				background-color: orangered;
+				transition: all .5s;
+			}
+			   #result{
+			   	visibility: hidden;
+				margin-left: 500px;
+				margin-top:300px;
+				position: absolute;
+				left: 0;
+				top: 0;
+			   }
+			   ul{
+			   	position: absolute;
+				left: 0;
+				top: 0;
+				margin-left: 600px;
+				margin-top: 150px;
+			   }
+		</style>
+	</head>
+
+	<body>
+		<img id="background" src="img/1.jpg"/>
+		<div class="table">
+			<h1>左右脑测试</h1>
+			<input type="button" id="go" onclick="begin(this)" value="点击开始" />
+			<input type="button" id="rego" onclick="rego(this)" value="重新开始" />
+			<input type="button" id="next" onclick="next(this)" value="下一题" />
+			<input type="button" id="over" onclick="over(this)" value="查看结果" />
+			<img id="result" src="img/2.jpg"/>
+		</div>
+		<div id="subject" class="clearfix">
+			<ul id="1">
+				<li>1. 遇到困难的时候，你通常会：</li><br/>
+				<input name="a" type="radio" value="" id="1.1" /><label for="1.1">认真分析形势及解决方案，三思后行</label><br/><br/>
+				<input name="a" type="radio" value="" id="1.2" /><label for="1.2">凭直觉选择下一步</label>
+			</ul>
+
+			<ul id="2">
+				<li>2. 两个旅游方案，你更偏好：</li><br/>
+				<input name="b" type="radio" value="" id="2.1" /><label for="2.1">冒险、富有挑战的路线</label><br/><br/>
+				<input name="b" type="radio" value="" id="2.2" /><label for="2.2">不太喜欢冒险，我会选择舒适安全的</label>
+			</ul>
+
+			<ul id="3">
+				<li>3.在音乐方面：</li><br/>
+				<input name="c" type="radio" value="" id="3.1" /><label for="3.1">喜欢音乐,自小就乐感很好</label><br/><br/>
+				<input name="c" type="radio" value="" id="3.2" /><label for="3.2">对音乐无感</label>
+			</ul>
+
+			<ul id="4">
+				<li>4.在理财方面：</li><br/>
+				<input name="d" type="radio" value="" id="4.1" /><label for="4.1">你大概能清楚自己的日常花销</label><br/><br/>
+				<input name="d" type="radio" value="" id="4.2" /><label for="4.2">经常有“钱都花在哪了”的感叹</label>
+			</ul>
+
+			<ul id="5">
+				<li>5.与陌生人初次会面时：</li><br/>
+				<input name="e" type="radio" value="" id="5.1" /><label for="5.1">对方的谈吐更让你在意</label><br/><br/>
+				<input name="e" type="radio" value="" id="5.2" /><label for="5.2">对方的穿着更让你在意</label>
+			</ul>
+
+			<ul id="6">
+				<li>6.当你在思考的时候：</li><br/>
+				<input name="f" type="radio" value="" id="6.1" /><label for="6.1">脑海中出现的大多是一个个语句</label><br/><br/>
+				<input name="f" type="radio" value="" id="6.2" /><label for="6.2">脑海中出现的大多是一个个图形图片</label>
+			</ul>
+
+			<ul id="7">
+				<li>7. 在时间管理方面：</li><br/>
+				<input name="g" type="radio" value="" id="7.1" /><label for="7.1">你做事井井有条，时间分配得当 </label><br/><br/>
+				<input name="g" type="radio" value="" id="7.2" /><label for="7.2">你经常为拖延症感到焦虑和懊恼</label>
+			</ul>
+
+			<ul id="8">
+				<li>8. 下面哪项任务更让你感到头痛和束手无策？</li><br/>
+				<input name="h" type="radio" value="" id="8.1" /><label for="8.1">做一份数据分析报告 </label><br/><br/>
+				<input name="h" type="radio" value="" id="8.2" /><label for="8.2">去郊外完成一幅写生</label>
+			</ul>
+
+			<ul id="9">
+				<li>9. 看电影的时候经常感动到流泪？</li><br/>
+				<input name="j" type="radio" value="" id="9.1" /><label for="9.1">是的</label><br/><br/>
+				<input name="j" type="radio" value="" id="9.2" /><label for="9.2">不是</label>
+			</ul>
+
+			<ul id="10">
+				<li>10. 你觉得更符合你的特征是：</li><br/>
+				<input name="h" type="radio" value="" id="10.1" /><label for="10.1">沉稳靠谱</label><br/><br/>
+				<input name="h" type="radio" value="" id="10.2" /><label for="10.2">灵活创意</label>
+			</ul>
+
+			<ul id="11">
+				<li>11. 以下更符合你的实际情况的是：</li><br/>
+				<input name="k" type="radio" value="" id="11.1" /><label for="11.1">先处理简单的事情。后处理重要的事情</label><br/><br/>
+				<input name="k" type="radio" value="" id="11.2" /><label for="11.2">先处理重要的事情，后处理简单的事情</label>
+			</ul>
+
+		</div>
+		<script type="text/javascript">
+			var i = 0;
+			var j=[1,2,3,4,5,6,7,8,9,10];
+			var content = document.getElementById("subject");
+			var items = content.getElementsByTagName("ul");
+			var itemss = items[i].getElementsByTagName("li"); 
+			var oNext = document.getElementById('next');
+            var oOver = document.getElementById('over');
+			var ogo = document.getElementById('go');
+			var oTop = content.offsetTop;
+			var oresult = document.getElementById('result');
+            var oRe = document.getElementById('rego');
+
+			function begin(e) {
+				oNext.style.visibility = "visible";
+				items[0].style.visibility = "visible";	
+			}
+
+			function next(e) {
+				var topn = oNext.offsetTop;
+				i = i + 1;
+				ogo.style.visibility = "hidden";
+				items[i].style.visibility = "visible";
+				items[i-1].style.visibility = "hidden";
+				
+                console.log(oTop);                
+                if(i==10){
+                	oOver.style.visibility = "visible";
+                	oRe.style.visibility = "visible";
+                }
+                
+			}
+			function over(e){
+					oresult.style.visibility = "visible";
+			}
+			
+			function rego(e){
+				window.location.reload();
+			}
+		</script>
+	</body>
+
+</html>
