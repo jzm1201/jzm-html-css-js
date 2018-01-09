@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			.clearfix {
+				clear: both;
+			}
+			#background{
+				position:fixed;
+                 width:120%;
+                 height:120%;
+                 z-index: -10;
+                 opacity: 0.5;
+                 margin-left:-172px;
+                 margin-top: -30px;
+			}
+			#subject {
+				/*border: 1px solid slateblue;*/
+				margin-left: 600px;
+				/*margin-top:-200px;*/
+				float: left;
+				/*position: absolute;*/
+				margin-top: 0px;
+				z-index: 999;
+			}
+			
+			ul {
+				list-style-type: none;
+				text-align: left;
+				visibility: hidden;
+				margin-bottom: 20px;
+				color: black;
+			}
+			
+			ul label {
+				cursor: pointer;
+			}
+			
+			.table h1 {
+				text-align: center;
+				position: relative;
+				color: black;
+			}
+			#go,
+			#next {
+				text-align: center;
+				border: none;
+				background-color: orange;
+				border-radius: 5px;
+				width: 70px;
+				height: 35px;
+				cursor: pointer;
+				margin-left: 720px;
+				outline: none;
+			}
+			
+			#next {
+				visibility: hidden;
+				margin-left: 1000px;
+				margin-top: 150px;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			#rego{
+				visibility: hidden;
+				text-align: center;
+				border: none;
+				background-color: orange;
+				border-radius: 5px;
+				width: 70px;
+				height: 35px;
+				cursor: pointer;
+				margin-left: 728px;
+				outline: none;
+				position: absolute;
+				left: 0;
+				top: 0;
+				margin-top: 84px;
+			}
+			#go:hover {
+				background-color: orangered;
+				transition: all .5s;
+			}
+			
+			#next:hover {
+				background-color: orangered;
+				transition: all .5s;
+			}
+			#over{
+				text-align: center;
+				border: none;
+				background-color: orange;
+				border-radius: 5px;
+				width: 70px;
+				height: 35px;
+				cursor: pointer;
+				margin-left: 720px;
+				outline: none;
+				margin-top: 150px;
+				visibility: hidden;
+				margin-left: 1111px;
+				
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			#over:hover {
+				background-color: orangered;
+				transition: all .5s;
+			}
+			   #result{
+			   	visibility: hidden;
+				margin-left: 500px;
+				margin-top:300px;
+				position: absolute;
+				left: 0;
+				top: 0;
+			   }
+			   ul{
+			   	position: absolute;
+				left: 0;
+				top: 0;
+				margin-left: 600px;
+				margin-top: 150px;
+			   }
+		</style>
+	</head>
+
+	<body>
+		<img id="background" src="img/1.jpg"/>
+		<div class="table">
+			<h1>左右脑测试</h1>
+			<input type="button" id="go" onclick="begin(this)" value="点击开始" />
+			<input type="button" id="rego" onclick="rego(this)" value="重新开始" />
+			<input type="button" id="next" onclick="next(this)" value="下一题" />
+			<input type="button" id="over" onclick="over(this)" value="查看结果" />
+			<img id="result" src="img/2.jpg"/>
+		</div>
+		<div id="subject" class="clearfix">
+			<ul id="1">
+				<li>1.当你唱歌的时候：</li><br/>
+				<input name="a" type="radio" value="" id="1.1" /><label for="1.1">A. 喜欢读歌词</label><br/><br/>
+				<input name="a" type="radio" value="" id="1.2" /><label for="1.2">B. 会把旋律、节奏和歌词都背下来</label>
+			</ul>
+
+			<ul id="2">
+				<li>2．当碰到困难的时候：</li><br/>
+				<input name="b" type="radio" value="" id="2.1" /><label for="2.1">A. 认真思考，然后制定出逐步的解决计划</label><br/><br/>
+				<input name="b" type="radio" value="" id="2.2" /><label for="2.2">B. 依靠自己的感觉解决问题</label>
+			</ul>
+
+			<ul id="3">
+				<li>3．当有约会的时候：</li><br/>
+				<input name="c" type="radio" value="" id="3.1" /><label for="3.1">A. 会早点到，以防万一</label><br/><br/>
+				<input name="c" type="radio" value="" id="3.2" /><label for="3.2">B. 经常是准时到，或者稍微晚一点</label>
+			</ul>
+
+			<ul id="4">
+				<li>4．当读书的时候：</li><br/>
+				<input name="d" type="radio" value="" id="4.1" /><label for="4.1">A. 愿意去体会每句话中的细微差别</label><br/><br/>
+				<input name="d" type="radio" value="" id="4.2" /><label for="4.2">B. 会浏览一下，找一些比较有趣的内容</label>
+			</ul>
+
+			<ul id="5">
+				<li>5．当烧饭的时候：</li><br/>
+				<input name="e" type="radio" value="" id="5.1" /><label for="5.1">A. 经常是照着菜谱做</label><br/><br/>
+				<input name="e" type="radio" value="" id="5.2" /><label for="5.2">B. 会利用手边的材料，发挥自己的想像力</label>
+			</ul>
+
+			<ul id="6">
+				<li>6．当有人问路的时候：</li><br/>
+				<input name="f" type="radio" value="" id="6.1" /><label for="6.1">A. 会告诉他具体的街道名称，以及大致的距离</label><br/><br/>
+				<input name="f" type="radio" value="" id="6.2" /><label for="6.2">B. 会给他描述一下沿途中的显着标识</label>
+			</ul>
+
+			<ul id="7">
+				<li>7．看电影时，记忆最深的是：</li><br/>
+				<input name="g" type="radio" value="" id="7.1" /><label for="7.1">A. 情节</label><br/><br/>
+				<input name="g" type="radio" value="" id="7.2" /><label for="7.2">B. 演技</label>
+			</ul>
+
+			<ul id="7">
+				<li>7. 在时间管理方面：</li><br/>
+				<input name="g" type="radio" value="" id="7.1" /><label for="7.1">你做事井井有条，时间分配得当 </label><br/><br/>
+				<input name="g" type="radio" value="" id="7.2" /><label for="7.2">你经常为拖延症感到焦虑和懊恼</label>
+			</ul>
+
+			<ul id="8">
+				<li>8．我最佩服别人的 ：</li><br/>
+				<input name="h" type="radio" value="" id="8.1" /><label for="8.1">A. 判断力 </label><br/><br/>
+				<input name="h" type="radio" value="" id="8.2" /><label for="8.2">B. 同情心</label>
+			</ul>
+
+			<ul id="9">
+				<li>9．脸部中央画一条竖线，我看到耳朵、眼睛和眉毛:</li><br/>
+				<input name="v" type="radio" value="" id="9.1" /><label for="9.1">A. 左边的高</label><br/><br/>
+				<input name="v" type="radio" value="" id="9.2" /><label for="9.2">B. 右边的高</label><br/><br/>
+				<input name="v" type="radio" value="" id="9.3" /><label for="9.3">C. 高低不是很明显</label>
+			</ul>
+
+			<ul id="10">
+				<li>10. 当我开抽屉的时候：</li><br/>
+				<input name="h" type="radio" value="" id="10.1" /><label for="10.1">A. 用左手</label><br/><br/>
+				<input name="h" type="radio" value="" id="10.2" /><label for="10.2">B. 用右手<</label>
+			</ul>
+
+			<ul id="11">
+				<li>11．我穿裤子的时候：</li><br/>
+				<input name="k" type="radio" value="" id="11.1" /><label for="11.1">A. 先穿左腿</label><br/><br/>
+				<input name="k" type="radio" value="" id="11.2" /><label for="11.2">B. 先穿右腿</label>
+			</ul>
+
+			<ul id="12">
+				<li>12．当我踢球的时候：</li><br/>
+				<input name="m" type="radio" value="" id="12.1" /><label for="12.1">A. 用左脚</label><br/><br/>
+				<input name="m" type="radio" value="" id="12.2" /><label for="12.2">B. 用右脚</label>
+			</ul>
+			
+			<ul id="13">
+				<li>13．当我和朋友聊天的时候：</li><br/>
+				<input name="n" type="radio" value="" id="13.1" /><label for="13.1">A. 我的声音很平淡</label><br/><br/>
+				<input name="n" type="radio" value="" id="13.2" /><label for="13.2">B. 我的声音富有感情</label>
+			</ul>
+			
+			<ul id="14">
+				<li>14．当我想听得更清楚的时候：</li><br/>
+				<input name="o" type="radio" value="" id="14.1" /><label for="14.1">A. 会侧重于右耳听</label><br/><br/>
+				<input name="o" type="radio" value="" id="14.2" /><label for="14.2">B. 会侧重于左耳听</label>
+			</ul>
+			
+			<ul id="15">
+				<li>15．当我看望远镜的时候：</li><br/>
+				<input name="p" type="radio" value="" id="15.1" /><label for="15.1">A. 用右眼看</label><br/><br/>
+				<input name="p" type="radio" value="" id="15.2" /><label for="15.2">B. 用左眼看</label>
+			</ul>
+
+			<ul id="16">
+				<li>16．当我闻一瓶酒精时：</li><br/>
+				<input name="q" type="radio" value="" id="16.1" /><label for="16.1">A. 左鼻孔较敏感</label><br/><br/>
+				<input name="q" type="radio" value="" id="16.2" /><label for="16.2">B. 右鼻孔较敏感</label>
+			</ul>
+			
+			<ul id="17">
+				<li>17 ．当我要想起以前的事时:</li><br/>
+				<input name="r" type="radio" value="" id="17.1" /><label for="17.1">A. 向右看</label><br/><br/>
+				<input name="r" type="radio" value="" id="17.2" /><label for="17.2">B. 向左看</label><br/><br/>
+				<input name="r" type="radio" value="" id="17.3" /><label for="17.3">　C. 向上，向下或者向前看</label>
+			</ul>
+			
+			<ul id="18">
+				<li>18．当与别人意见一致的时候，我一般会说</li><br/>
+				<input name="s" type="radio" value="" id="18.1" /><label for="18.1">A. 听起来很有道理</label><br/><br/>
+				<input name="s" type="radio" value="" id="18.2" /><label for="18.2">B. 看起来我和你一样</label><br/><br/>
+				<input name="s" type="radio" value="" id="18.3" /><label for="18.3">C. 我感觉不错</label>
+			</ul>
+			
+			<ul id="19">
+				<li>19．当我看图“A”. 的时候，首先看到的是:</li><br/>
+				<input name="t" type="radio" value="" id="19.1" /><label for="19.1">A. 许多 A</label><br/><br/>
+				<input name="t" type="radio" value="" id="19.2" /><label for="19.2">B. 一支箭</label><br/><br/>
+				<input name="t" type="radio" value="" id="19.3" /><label for="19.3">C. 一支由 A 组成的箭</label>
+			</ul>
+			
+			<ul id="20">
+				<li>20．我认为使自己能最快最好地接受信息的方式使：</li><br/>
+				<input name="u" type="radio" value="" id="20.1" /><label for="20.1">A. 听到指令的时候</label><br/><br/>
+				<input name="u" type="radio" value="" id="20.2" /><label for="20.2">B. 看到指令的时候</label><br/><br/>
+				<input name="u" type="radio" value="" id="20.3" /><label for="20.3">C. 动手做的时候</label>
+			</ul>
+		</div>
+		<script type="text/javascript">
+			var i = 0;
+			var j=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19];
+			var content = document.getElementById("subject");
+			var items = content.getElementsByTagName("ul");
+			var itemss = items[i].getElementsByTagName("li"); 
+			var oNext = document.getElementById('next');
+            var oOver = document.getElementById('over');
+			var ogo = document.getElementById('go');
+			var oTop = content.offsetTop;
+			var oresult = document.getElementById('result');
+            var oRe = document.getElementById('rego');
+
+			function begin(e) {
+				oNext.style.visibility = "visible";
+				items[0].style.visibility = "visible";	
+			}
+
+			function next(e) {
+				var topn = oNext.offsetTop;
+				i = i + 1;
+				ogo.style.visibility = "hidden";
+				items[i].style.visibility = "visible";
+				items[i-1].style.visibility = "hidden";
+				
+                console.log(oTop);                
+                if(i==20){
+                	oOver.style.visibility = "visible";
+                	oRe.style.visibility = "visible";
+                }
+                
+			}
+			function over(e){
+					oresult.style.visibility = "visible";
+			}
+			
+			function rego(e){
+				window.location.reload();
+			}
+		</script>
+	</body>
+
+</html>
