@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>简历</title>
+		<!-- 引入样式 -->
+		<!--<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">-->
+		<link href="https://cdn.bootcss.com/element-ui/2.3.2/theme-chalk/index.css" rel="stylesheet">
+		<link rel="shortcut icon" href="img/favicon.ico">
+		<style>
+			body {
+				background-color:cadetblue;
+				padding: 30px;
+				font-family: "微软雅黑";
+			}
+			
+			.container {
+				min-height: 400px;
+				max-width: 1000px;
+				border: 10px solid #fff;
+				margin: auto;
+				color: #fff;
+			}
+			
+			.header {
+				/*min-height: 300px;*/
+			}
+			
+			.header .logo,
+			.header .img {
+				/*border: 1px solid #fff;*/
+				/*min-height: 200px;*/
+			}
+			
+			.header .name {
+				margin: 0.5em 0;
+				font-size: 28px;
+			}
+			
+			.header .description {
+				margin-bottom: .5em;
+			}
+			
+			.header .link {
+				text-decoration: none;
+				color: #CB1B45;
+			}
+			
+			.header .img {
+				overflow: hidden;
+			}
+			
+			.header .img img {
+				width: 100%;
+			}
+			
+			.menu:hover {
+				transition: all .5s;
+				color: #00f;
+				font-size: 1.5em;
+			}
+			/*
+				 在屏幕设备中，并且宽度介于100px-640px的设备中使用
+				 * */
+			/*@media only screen and (min-width: 100px) and (max-width: 640px) {
+				
+				body{
+					background: #dd0;
+				}
+			}*/
+			
+			.el-button.is-round {
+				padding: 23px;
+				border-radius: 100%;
+			}
+			
+			.skill {
+				position: relative;
+			}
+			
+			.skill::after {
+				content: attr(data-text);
+				position: absolute;
+				left: 10px;
+				top: 2px;
+				font-size: 0.8em;
+			}
+			
+			.card h3,
+			.card h2 {
+				margin: 0px;
+			}
+			
+			.card h3 {
+				margin-top: 20px;
+				color: #999;
+				font-size: 0.8em;
+			}
+			
+			.card h2 {
+				margin-bottom: 20px;
+				position: relative;
+			}
+			
+			.card h2::after {
+			/*
+			 默认就是文本，默认行内元素  inline
+			 	行内元素是没有宽的
+			 	如果需要设置宽度，那么需要转化显示方式
+			 * */
+				content: " ";
+				display: inline-block;
+				width: 40px;
+				height: 10px;
+				background-color: #CB1B45;
+				position: absolute;
+				left: 105px;
+				top: 12px;
+			}
+			.bottom .right {
+			  padding-right: 30px;
+			  padding-left: 35px;
+			  /*清單排列 */
+			}
+			.bottom .right ul.listexperience > li {
+			  display: flex;
+			  margin-bottom: 15px;
+			}
+			.bottom .right ul.listexperience > li ul {
+			  padding-left: 10px;
+			  margin-left: 10px;
+			  border-left: solid 4px white;
+			}
+			.bottom .right ul.listexperience > li ul span {
+			  font-weight: normal;
+			  opacity: 0.9;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="app">
+			<el-row class="container">
+				<el-col>
+					<el-row class="header" type="flex" justify="space-between" :gutter="20">
+						<el-col :xs="18" :sm="16" :md="14" :lg="12">
+							<div class="logo">
+								<h1 class="name">
+									{{ name }}
+								</h1>
+								<div class="description">
+									{{ description }}
+								</div>
+								<div class="links">
+									<a class="link" v-for="item in links" :href="item.lUrl"> {{ item.lName }} </a>
+								</div>
+							</div>
+						</el-col>
+						<el-col :xs="6" :sm="4">
+							<div class="img">
+								<img :src="imgUrl" alt="" />
+							</div>
+						</el-col>
+					</el-row>
+					
+					<el-row class="content">
+						<el-col :span='12'>
+							<div class="card">
+								<h4>Skill</h4>
+								<h2>语言技能</h2>
+								<div>
+									<el-progress class='skill' v-for="item in skills" :data-text="item.sName" :text-inside="true" :stroke-width="18" :percentage="item.sNum" :color="item.sColor"></el-progress>
+								</div>
+							</div>
+						</el-col>
+						<el-col :span="12"></el-col>
+					</el-row>
+					
+					<el-row class="right">
+						<el-col :span='12'>
+							<div class="block">
+					        <h4>Experience</h4>
+					        <h2>项目经历</h2>
+					        <ul class="listexperience">
+					          <li class="year">2017
+					            <ul>
+					              <li>黑马商店项目实训</li><span>使用JDBC技术连接数据库，记录用户登陆信息</span>
+					              <li>....</li><span>...</span>
+					            </ul>
+					          </li>
+					          <li class="year">2018
+					            <ul>
+					              <li>客户关系管理系统</li><span>搭建Hibernate、struts框架</span>
+					            </ul>
+					          </li>
+					        </ul>
+					      </div>
+					      <div class="block">
+					        <h4>Honor</h4>
+					        <h2>荣誉证书</h2>
+					        <ul>
+					          <li>计算机二级c语言</li>
+					          <li>英语应用等级A级</li>
+					        </ul>
+					      </div>
+					    </div>
+						</el-col>
+						<el-col :span="12"></el-col>
+					</el-row>
+					
+				</el-col>
+			</el-row>
+		</div>
+		<!-- 导入Vue -->
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+		<!-- 引入组件库 -->
+		<!--<script src="https://unpkg.com/element-ui/lib/index.js"></script>-->
+		<script src="https://cdn.bootcss.com/element-ui/2.3.2/index.js"></script>
+		<script>
+			//基于Vue
+			var app = new Vue({
+					el: "#app",
+					data: {
+						name: "姜智孟",
+						description: "努力将工作培养成一门爱好融入到生活中去",
+						links: [{
+							lName: '作品',
+							lUrl: 'https://jzm1201.github.io/photograph/index.html'
+						}, {
+							lName: 'Github主页',
+							lUrl: 'https://github.com/jzm1201'
+						}, {
+							lName: '邮箱',
+							lUrl: ''
+						}],
+						imgUrl: 'img/jzm1.jpg',
+						skills: [{
+							sName: 'html',
+							sNum: 80,
+							sColor: '#33ff33'
+						}, {
+							sName: 'js',
+							sNum: 95,
+							sColor: '#66dd33'
+						}, {
+							sName: 'java',
+							sNum: 90,
+							sColor: '#99bb33'
+						}],
+					},
+				}
+
+			);
+
+		</script>
+	</body>
+
+</html>
